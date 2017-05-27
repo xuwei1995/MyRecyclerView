@@ -1,29 +1,40 @@
 # MyRecyclerView
 ### 利用hongyang 的RecyclerView万能适配器 和LRecyclerView 写的一个小小DEMO
 ##  先来示例图gif有点失帧
+
 ![img](https://github.com/xuwei1995/MyRecyclerView/blob/master/img/2.gif)
 ![img](https://github.com/xuwei1995/MyRecyclerView/blob/master/img/3.gif)
 ![img](https://github.com/xuwei1995/MyRecyclerView/blob/master/img/4.gif)
-#### 先要倚赖 在project  gradle 
+
+
+
+在project  gradle 
+
 allprojects {
-    repositories {
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
+   
+   repositories {
+       
+       jcenter()
+      
+      maven { url "https://jitpack.io" }
+  
+  }
 }
+
 在 Module gradle
 compile 'com.github.jdsjlzx:LRecyclerView:1.4.3'
 
 
-## 监听LRecyclerView
-/**
-         *onScrollUp()——RecyclerView向上滑动的监听事件；
-         onScrollDown()——RecyclerView向下滑动的监听事件；
-         onScrolled()——RecyclerView正在滚动的监听事件；
-         onScrollStateChanged(int state)——RecyclerView正在滚动的监听事件；
-         */
+ 监听LRecyclerView
 
-        lRecyclerView.setLScrollListener(new LRecyclerView.LScrollListener() {
+/**
+*onScrollUp()——RecyclerView向上滑动的监听事件；
+ onScrollDown()——RecyclerView向下滑动的监听事件；
+ onScrolled()——RecyclerView正在滚动的监听事件；
+onScrollStateChanged(int state)——RecyclerView正在滚动的监听事件；
+ */
+
+ lRecyclerView.setLScrollListener(new LRecyclerView.LScrollListener() {
             @Override
             public void onScrollUp() {
 
@@ -75,7 +86,8 @@ compile 'com.github.jdsjlzx:LRecyclerView:1.4.3'
                 }
             }
         });
-        //适配器
+      
+      //适配器
          commonAdapter=    new CommonAdapter<Info>(this,R.layout.item,list) {
          @Override
             public void convert(ViewHolder holder, final Info info, final int position) {
@@ -91,13 +103,15 @@ compile 'com.github.jdsjlzx:LRecyclerView:1.4.3'
                 Button btnUnRead = holder.getView(R.id.btnUnRead);
                 Button btnTop = holder.getView(R.id.btnTop);
                  ImageView icon=holder.getView(R.id.icon);
-                 }}
+                 });
+              
+                 }
                  
                  
                  
                  
                       
-                 package xuwei.com.myrecyclerview.adapter;
+package xuwei.com.myrecyclerview.adapter;
 
 import android.app.Activity;
 import android.content.Context;
